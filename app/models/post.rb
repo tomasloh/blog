@@ -5,6 +5,7 @@ class Post < ActiveRecord::Base
 	
 	belongs_to :user
 	
-	has_many :category_posts, :deoendent => :destroy
-	has_many :categories, :through => :category_posts
+	has_many :category_posts,	:dependent => :destroy
+	has_many :categories, 		:through   => :category_posts
+	has_many :comments,			:dependent => :destroy
 end
