@@ -4,4 +4,7 @@ class Post < ActiveRecord::Base
 	validates :content,	:presence => true
 	
 	belongs_to :user
+	
+	has_many :category_posts, :deoendent => :destroy
+	has_many :categories, :through => :category_posts
 end
