@@ -1,0 +1,7 @@
+<div id = 'categories-list'>
+<h1 style='color:white;'>Categories</h1>
+<% @categories.each do |category| %>
+#Дла каждой категории создаем ссылку с названием категории и количеством постов
+<%= link_to "#{category.name} #{category.count}", category_path(category), :class => 'category-link' %> <br />
+<% end %>
+</div>

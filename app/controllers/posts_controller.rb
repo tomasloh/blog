@@ -5,6 +5,7 @@ class PostsController < ApplicationController
 	
 	def show
 		@post = Post.find(params[:id])
+		@comment = Comment.new
 	end
 	
 	def new
@@ -17,6 +18,7 @@ class PostsController < ApplicationController
 	
 	def create
 		@post = Post.new(params[:post])
+		@post.user = @currenct_user
 		@post.save ? redirect_to(@post, :notice => 'Post was successfully created.') : render(:action=> "new")
 	end
 	
